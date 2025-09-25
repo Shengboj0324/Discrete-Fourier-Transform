@@ -96,25 +96,3 @@ Input: [0.000, 0.707, 1.000, 0.707, 0.000, -0.707, -1.000, -0.707]
 DFT Magnitudes: [0.000, 4.000, 0.000, 0.000, 0.000, 0.000, 0.000, 4.000]
 ```
 The energy concentration at bins 1 and 7 (which are symmetric) correctly identifies the single-frequency sinusoidal content.
-
-## Technical Implementation Details
-
-### Complex Arithmetic Handling
-
-The implementation uses Python's built-in complex number support, ensuring numerical stability and accuracy. The `cmath.exp()` function provides robust computation of complex exponentials, which are the heart of the DFT algorithm.
-
-
-
-## Limitations and Future Enhancements
-
-### Current Limitations
-
-- **Performance**: O(N²) complexity limits practical use to signals with N < 1000
-- **Memory**: Creates intermediate complex arrays that could be optimized
-- **Precision**: Limited by floating-point arithmetic precision
-
-### Potential Enhancements
-
-- **FFT Implementation**: Could extend to Fast Fourier Transform for O(N log N) performance
-- **Windowing Functions**: Could add support for different window functions
-- **Visualization**: Could integrate plotting capabilities for frequency spectrum display
